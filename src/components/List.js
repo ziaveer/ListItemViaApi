@@ -1,13 +1,16 @@
 import ListItem from "./ListItem";
-import classes from'./List.module.css';
+
+import { Grid } from "@material-ui/core";
 
 const List = (props) => {
   // console.log(props.userLists);
 
   return (
-    <ul className ={classes.list}>
+      
+    <Grid container spacing={4} direction='column' alignItems='center' >
       {props.userLists.map((data) => (
         <ListItem
+        
           key={data.id}
           src={data.image}
           firstName={data.firstName}
@@ -15,7 +18,8 @@ const List = (props) => {
           email={data.email}
         />
       ))}
-    </ul>
+    </Grid>
+    
   );
 };
 export default List;
